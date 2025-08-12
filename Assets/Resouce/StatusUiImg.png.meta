@@ -3,23 +3,32 @@ guid: 40b33595e7dab42769bf63fa1e6ff468
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8831051487082600821
-    second: "\u1109\u1161\u11BC\u1110\u1162\u110E\u1161\u11BCui_0"
+      213: 2396263571790801177
+    second: StatusUIImg_0
   - first:
-      213: -7922047742420286147
-    second: "\u1109\u1161\u11BC\u1110\u1162\u110E\u1161\u11BCui_1"
+      213: -1826085585785530176
+    second: StatusUIImg_1
   - first:
-      213: 8995520923552931104
-    second: "\u1109\u1161\u11BC\u1110\u1162\u110E\u1161\u11BCui_2"
+      213: 7707311102057993617
+    second: StatusUIImg_2
   - first:
-      213: 4236129549019612739
-    second: "\u1109\u1161\u11BC\u1110\u1162\u110E\u1161\u11BCui_3"
+      213: -6038264659889774911
+    second: StatusUIImg_3
   - first:
-      213: 5820455692195206091
-    second: "\u1109\u1161\u11BC\u1110\u1162\u110E\u1161\u11BCui_4"
+      213: -7713994309790161875
+    second: StatusUIImg_4
   - first:
-      213: -7937056743494115302
-    second: "\u1109\u1161\u11BC\u1110\u1162\u110E\u1161\u11BCui_5"
+      213: 654670135879905967
+    second: StatusUIImg_5
+  - first:
+      213: 6226442350080079763
+    second: StatusUIImg_6
+  - first:
+      213: -6814810376650527600
+    second: StatusUIImg_7
+  - first:
+      213: 5584900554980011705
+    second: StatusUIImg_8
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -115,11 +124,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: StatusUiImg_0
+      name: StatusUIImg_0
       rect:
         serializedVersion: 2
-        x: 58
-        y: 913
+        x: 8
+        y: 981
         width: 397
         height: 90
       alignment: 0
@@ -128,20 +137,20 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 613154dc772454d01ab6f4b55d7d84f5
-      internalID: -637205967
+      spriteID: 919acc8c50d314120800000000000000
+      internalID: 2396263571790801177
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: StatusUiImg_1
+      name: StatusUIImg_1
       rect:
         serializedVersion: 2
-        x: 476
-        y: 903
+        x: 413
+        y: 983
         width: 396
         height: 87
       alignment: 0
@@ -150,20 +159,86 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: d9ffed51dc25e41d4a7d1ecc773de11a
-      internalID: -808807945
+      spriteID: 0c8dac1b5d078a6e0800000000000000
+      internalID: -1826085585785530176
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: StatusUiImg_2
+      name: StatusUIImg_2
       rect:
         serializedVersion: 2
-        x: 1071
-        y: 768
+        x: 860
+        y: 749
+        width: 1041
+        height: 292
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 195579bbc9ed5fa60800000000000000
+      internalID: 7707311102057993617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusUIImg_3
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 884
+        width: 397
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ce997fa846c33ca0800000000000000
+      internalID: -6038264659889774911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusUIImg_4
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 886
+        width: 396
+        height: 87
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d24a295bb0362f490800000000000000
+      internalID: -7713994309790161875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatusUIImg_5
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 659
         width: 219
         height: 217
       alignment: 0
@@ -172,98 +247,76 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 74a41c345ff8b4f6aa4bd99193658299
-      internalID: 1481811381
+      spriteID: fa2bd2e150bd51900800000000000000
+      internalID: 654670135879905967
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: StatusUiImg_3
+      name: StatusUIImg_6
       rect:
         serializedVersion: 2
-        x: 62
-        y: 755
-        width: 397
-        height: 90
+        x: 380
+        y: 656
+        width: 438
+        height: 217
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: e3aa7aef1936243c2905bb81c515c22d
-      internalID: 118412121
+      spriteID: 397b8fa0454c86650800000000000000
+      internalID: 6226442350080079763
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: StatusUiImg_4
+      name: StatusUIImg_7
       rect:
         serializedVersion: 2
-        x: 490
-        y: 757
-        width: 396
-        height: 87
+        x: 0
+        y: 356
+        width: 1920
+        height: 292
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: dff4d907ebd2844f48333a3ce0d34541
-      internalID: -1588928963
+      spriteID: 09c6910a11eec61a0800000000000000
+      internalID: -6814810376650527600
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: StatusUiImg_5
+      name: StatusUIImg_8
       rect:
         serializedVersion: 2
         x: 0
         y: 58
         width: 1920
-        height: 297
+        height: 292
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: b4ea19e6f3ae146cd9fbbb64a6f38c20
-      internalID: -1743376221
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: StatusUiImg_6
-      rect:
-        serializedVersion: 2
-        x: 641
-        y: 101
-        width: 232
-        height: 219
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9ad0849b3cbc4054c95ef980d9a92c1e
-      internalID: 563135175
+      spriteID: 9be2775f67d818d40800000000000000
+      internalID: 5584900554980011705
       vertices: []
       indices: 
       edges: []
@@ -272,7 +325,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 79313776532004ac3b915ba390aed606
+    spriteID: 3ea19f083b7bf45cf82029bd6933f741
     internalID: 0
     vertices: []
     indices: 
@@ -282,13 +335,15 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      StatusUiImg_0: -637205967
-      StatusUiImg_1: -808807945
-      StatusUiImg_2: 1481811381
-      StatusUiImg_3: 118412121
-      StatusUiImg_4: -1588928963
-      StatusUiImg_5: -1743376221
-      StatusUiImg_6: 563135175
+      StatusUIImg_0: 2396263571790801177
+      StatusUIImg_1: -1826085585785530176
+      StatusUIImg_2: 7707311102057993617
+      StatusUIImg_3: -6038264659889774911
+      StatusUIImg_4: -7713994309790161875
+      StatusUIImg_5: 654670135879905967
+      StatusUIImg_6: 6226442350080079763
+      StatusUIImg_7: -6814810376650527600
+      StatusUIImg_8: 5584900554980011705
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

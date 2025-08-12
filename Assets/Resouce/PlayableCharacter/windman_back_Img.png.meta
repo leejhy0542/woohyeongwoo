@@ -112,13 +112,13 @@ TextureImporter:
       name: windman_back_Img_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 23
         y: 0
-        width: 1024
-        height: 1024
+        width: 949
+        height: 1005
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 6, y: 88, z: 17, w: 0}
       customData: 
       outline: []
       physicsShape: []
@@ -134,12 +134,12 @@ TextureImporter:
       name: windman_back_Img_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 704
-        width: 8
-        height: 320
+        x: 432
+        y: 0
+        width: 592
+        height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -152,55 +152,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: windman_back_Img_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 9
-        height: 5
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 10f136a65d95cc520800000000000000
-      internalID: 2723650647800094465
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: windman_back_Img_3
-      rect:
-        serializedVersion: 2
-        x: 431
-        y: 0
-        width: 593
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 65ed06c7c4da1ef10800000000000000
-      internalID: 2297307828951506518
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 24e7e59329aef4ea895e9a8c819cf160
     internalID: 0
     vertices: []
     indices: 
@@ -212,8 +168,6 @@ TextureImporter:
     nameFileIdTable:
       windman_back_Img_0: -8100603318627179424
       windman_back_Img_1: 5851551710191411381
-      windman_back_Img_2: 2723650647800094465
-      windman_back_Img_3: 2297307828951506518
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

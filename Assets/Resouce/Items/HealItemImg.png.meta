@@ -112,111 +112,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ce137bb5e70343d88060d2447a3b63_0
+      name: HealItemImg_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 533
-        width: 1026
-        height: 493
+        x: 226
+        y: 55
+        width: 572
+        height: 907
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 0c174a188ff0fd340800000000000000
-      internalID: 4890645280348991936
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ce137bb5e70343d88060d2447a3b63_1
-      rect:
-        serializedVersion: 2
-        x: 1019
-        y: 1020
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ca9ceb303f9fc3a70800000000000000
-      internalID: 8808189793365051820
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ce137bb5e70343d88060d2447a3b63_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 8
-        height: 5
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e7f4eb948d79f9080800000000000000
-      internalID: -9178450560351842434
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ce137bb5e70343d88060d2447a3b63_3
-      rect:
-        serializedVersion: 2
-        x: 40
-        y: 0
-        width: 763
-        height: 963
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ff75381e6d890b720800000000000000
-      internalID: 2859953812054169599
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ce137bb5e70343d88060d2447a3b63_4
-      rect:
-        serializedVersion: 2
-        x: 526
-        y: 0
-        width: 500
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3aea2dea8cbcf74f0800000000000000
-      internalID: -828719743625941341
+      spriteID: 2f91d47b5d05143a69a7819e735c2d9f
+      internalID: 1333701366
       vertices: []
       indices: 
       edges: []
@@ -225,7 +137,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 831ba01a46d2146a3ac18f11f8cb2786
     internalID: 0
     vertices: []
     indices: 
@@ -235,11 +147,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ce137bb5e70343d88060d2447a3b63_0: 4890645280348991936
-      ce137bb5e70343d88060d2447a3b63_1: 8808189793365051820
-      ce137bb5e70343d88060d2447a3b63_2: -9178450560351842434
-      ce137bb5e70343d88060d2447a3b63_3: 2859953812054169599
-      ce137bb5e70343d88060d2447a3b63_4: -828719743625941341
+      HealItemImg_0: 1890848758
+      HealItemImg_1: -1101718553
+      HealItemImg_2: 463269861
+      HealItemImg_3: 1333701366
+      HealItemImg_4: -418198452
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

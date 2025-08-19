@@ -1,107 +1,188 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections.Generic;
 
-public class PickedCharacterScript : MonoBehaviour
+public class CharacterSkillPicker : MonoBehaviour
 {
-    public Button[] slotButtons;             // 슬롯 선택 버튼들
-    public Button[] portraitButtons;         // 캐릭터 초상화 버튼들
-    public GameObject[] characterGroups;     // 캐릭터 UI 그룹들 (이미지 + 텍스트 등)
+    [Header("UI Elements")]
+    public Button[] slotButtons;               // 슬롯 버튼들
+    public Button[] portraitButtons;           // 캐릭터 초상화 버튼들
+    public GameObject[] characterGroups;       // 캐릭터 UI 그룹들
+    public GameObject[] skillGroups;           // 캐릭터별 스킬 그룹들
 
-    private GameObject[] slotCharacters = new GameObject[3]; // 슬롯에 선택된 캐릭터 그룹
-    private int currentSlot = 0;             // 현재 선택 중인 슬롯
+    private GameObject[] slotCharacters = new GameObject[3];         // 슬롯별 캐릭터 저장
+    private GameObject[] slotSkills = new GameObject[3];             // 슬롯별 스킬 그룹 저장
+    private List<Button>[] slotSkillButtons = new List<Button>[3];   // 슬롯별 선택된 스킬 버튼들
+
+    private int currentSlot = 0;
+    private Color selectedColor = Color.yellow;
+    private Color defaultColor = Color.white;
 
     void Start()
     {
-        HideAll(); // 모든 캐릭터 그룹 숨기기
+        HideAll();
 
-        // 슬롯 버튼 클릭 이벤트 등록
+        for (int i = 0; i < 3; i++)
+            slotSkillButtons[i] = new List<Button>();
+
         for (int i = 0; i < slotButtons.Length; i++)
         {
             int index = i;
             slotButtons[i].onClick.AddListener(() => SwitchSlot(index));
         }
 
-        // 초상화 버튼 클릭 이벤트 등록
         for (int i = 0; i < portraitButtons.Length; i++)
         {
             int index = i;
-            portraitButtons[i].onClick.AddListener(() => SelectCharacter(characterGroups[index]));
+            portraitButtons[i].onClick.AddListener(() => SelectCharacter(index));
+        }
+
+        for (int i = 0; i < skillGroups.Length; i++)
+        {
+            int characterIndex = i;
+            Button[] skillButtons = skillGroups[i].GetComponentsInChildren<Button>(true);
+
+            foreach (var btn in skillButtons)
+            {
+                btn.onClick.AddListener(() => SelectSkill(characterIndex, btn));
+            }
         }
     }
 
-    // 슬롯 전환
     void SwitchSlot(int slotIndex)
     {
         currentSlot = slotIndex;
         ShowSlotCharacter(slotIndex);
     }
 
-    // 캐릭터 선택
-    void SelectCharacter(GameObject selectedGroup)
+    void SelectCharacter(int characterIndex)
     {
-        // 이미 다른 슬롯에 선택된 캐릭터인지 확인
-        for (int i = 0; i < slotCharacters.Length; i++)
-        {
-            if (slotCharacters[i] == selectedGroup && i != currentSlot)
-                return; // 다른 슬롯에 이미 선택된 캐릭터면 선택 불가
-        }
+        GameObject selectedGroup = characterGroups[characterIndex];
 
-        // 현재 슬롯에 이미 선택된 캐릭터를 다시 누르면 선택 취소
+        // 선택 취소
         if (slotCharacters[currentSlot] == selectedGroup)
         {
             slotCharacters[currentSlot] = null;
+            slotSkills[currentSlot] = null;
+            slotSkillButtons[currentSlot].Clear();
             selectedGroup.SetActive(false);
+            HideSkillGroup(characterIndex);
             return;
         }
 
-        // 현재 슬롯에 캐릭터 저장
+        // 캐릭터 선택
         slotCharacters[currentSlot] = selectedGroup;
+        slotSkills[currentSlot] = skillGroups[characterIndex];
+        slotSkillButtons[currentSlot].Clear();
 
-        // 캐릭터 표시 업데이트
         ShowSlotCharacter(currentSlot);
+        EnableGroup(skillGroups[characterIndex]);
     }
 
-    // 현재 슬롯의 캐릭터만 표시
+    void SelectSkill(int characterIndex, Button clickedButton)
+    {
+        if (slotCharacters[currentSlot] != characterGroups[characterIndex])
+            return;
+
+        List<Button> selectedButtons = slotSkillButtons[currentSlot];
+
+        // 이미 선택된 버튼이면 해제
+        if (selectedButtons.Contains(clickedButton))
+        {
+            SetButtonBorder(clickedButton, defaultColor);
+            selectedButtons.Remove(clickedButton);
+            return;
+        }
+
+        // 최대 2개까지만 선택
+        if (selectedButtons.Count >= 2)
+        {
+            Debug.Log("최대 2개의 스킬만 선택할 수 있습니다.");
+            return;
+        }
+
+        // 새 선택 저장
+        selectedButtons.Add(clickedButton);
+        SetButtonBorder(clickedButton, selectedColor);
+    }
+
     void ShowSlotCharacter(int slotIndex)
     {
         HideAll();
 
-        if (slotCharacters[slotIndex] != null)
-            EnableGroup(slotCharacters[slotIndex]);
+        GameObject characterGroup = slotCharacters[slotIndex];
+        GameObject skillGroup = slotSkills[slotIndex];
+        List<Button> skillButtons = slotSkillButtons[slotIndex];
+
+        if (characterGroup != null)
+            EnableGroup(characterGroup);
+
+        if (skillGroup != null)
+            EnableGroup(skillGroup);
+
+        foreach (var btn in skillButtons)
+            SetButtonBorder(btn, selectedColor);
     }
 
-    // 모든 캐릭터 그룹 숨기기
     void HideAll()
     {
         foreach (var group in characterGroups)
         {
             group.SetActive(false);
+            DisableTexts(group);
+        }
+
+        foreach (var skill in skillGroups)
+        {
+            skill.SetActive(false);
+            DisableTexts(skill);
+
+            Button[] buttons = skill.GetComponentsInChildren<Button>(true);
+            foreach (var btn in buttons)
+                SetButtonBorder(btn, defaultColor);
         }
     }
 
-    // 그룹 오브젝트와 내부 UI 요소 활성화
     void EnableGroup(GameObject group)
     {
         group.SetActive(true);
 
-        // 내부 이미지 켜기
         Image[] images = group.GetComponentsInChildren<Image>(true);
         foreach (var img in images)
-        {
             img.enabled = true;
-        }
 
-        // 내부 TextMeshProUGUI 켜기
         TMP_Text[] tmps = group.GetComponentsInChildren<TMP_Text>(true);
         foreach (var tmp in tmps)
         {
             tmp.enabled = true;
-
-            // 알파값이 0일 경우 대비
             Color c = tmp.color;
             c.a = 1f;
             tmp.color = c;
         }
+    }
+
+    void DisableTexts(GameObject group)
+    {
+        TMP_Text[] tmps = group.GetComponentsInChildren<TMP_Text>(true);
+        foreach (var tmp in tmps)
+            tmp.enabled = false;
+    }
+
+    void HideSkillGroup(int characterIndex)
+    {
+        if (characterIndex >= 0 && characterIndex < skillGroups.Length)
+        {
+            GameObject skillGroup = skillGroups[characterIndex];
+            skillGroup.SetActive(false);
+            DisableTexts(skillGroup);
+        }
+    }
+
+    void SetButtonBorder(Button btn, Color borderColor)
+    {
+        Image img = btn.GetComponent<Image>();
+        if (img != null)
+            img.color = borderColor;
     }
 }

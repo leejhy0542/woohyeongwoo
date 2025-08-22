@@ -6,14 +6,14 @@ using System.Collections.Generic;
 public class CharacterSkillPicker : MonoBehaviour
 {
     [Header("UI Elements")]
-    public Button[] slotButtons;               // 슬롯 버튼들
-    public Button[] portraitButtons;           // 캐릭터 초상화 버튼들
-    public GameObject[] characterGroups;       // 캐릭터 UI 그룹들
-    public GameObject[] skillGroups;           // 캐릭터별 스킬 그룹들
+    public Button[] slotButtons;
+    public Button[] portraitButtons;
+    public GameObject[] characterGroups;
+    public GameObject[] skillGroups;
 
-    private GameObject[] slotCharacters = new GameObject[3];         // 슬롯별 캐릭터 저장
-    private GameObject[] slotSkills = new GameObject[3];             // 슬롯별 스킬 그룹 저장
-    private List<Button>[] slotSkillButtons = new List<Button>[3];   // 슬롯별 선택된 스킬 버튼들
+    private GameObject[] slotCharacters = new GameObject[3];
+    private GameObject[] slotSkills = new GameObject[3];
+    private List<Button>[] slotSkillButtons = new List<Button>[3];
 
     private int currentSlot = 0;
     private Color selectedColor = Color.yellow;
@@ -60,6 +60,16 @@ public class CharacterSkillPicker : MonoBehaviour
     {
         GameObject selectedGroup = characterGroups[characterIndex];
 
+        // 이미 다른 슬롯에서 선택된 캐릭터인지 확인
+        for (int i = 0; i < slotCharacters.Length; i++)
+        {
+            if (i != currentSlot && slotCharacters[i] == selectedGroup)
+            {
+                Debug.Log("이 캐릭터는 이미 다른 슬롯에서 선택되었습니다.");
+                return;
+            }
+        }
+
         // 선택 취소
         if (slotCharacters[currentSlot] == selectedGroup)
         {
@@ -87,7 +97,6 @@ public class CharacterSkillPicker : MonoBehaviour
 
         List<Button> selectedButtons = slotSkillButtons[currentSlot];
 
-        // 이미 선택된 버튼이면 해제
         if (selectedButtons.Contains(clickedButton))
         {
             SetButtonBorder(clickedButton, defaultColor);
@@ -95,14 +104,12 @@ public class CharacterSkillPicker : MonoBehaviour
             return;
         }
 
-        // 최대 2개까지만 선택
         if (selectedButtons.Count >= 2)
         {
             Debug.Log("최대 2개의 스킬만 선택할 수 있습니다.");
             return;
         }
 
-        // 새 선택 저장
         selectedButtons.Add(clickedButton);
         SetButtonBorder(clickedButton, selectedColor);
     }
